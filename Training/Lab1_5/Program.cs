@@ -66,28 +66,30 @@ namespace Lab1_5
         static void My_Binary()
         {
             //Implement positive integer variable input
-            int q, w;
-            Console.Write("Enter the first number: ");
+            int q;
+            Console.Write("Enter the number: ");
             q = Int32.Parse( Console.ReadLine());
-            Console.Write("Enter the second number: ");
-            w = Int32.Parse(Console.ReadLine());
-
+            
             //Present it like binary string
             //   For example, 4 as 100
-            String first = Convert.ToString(q,2);
-            String second = Convert.ToString(w, 2);
-            Console.WriteLine($"First = {q} in binary = {first}");
-            Console.WriteLine($"Second = {w} in binary = {second}");
-
+            String number = Convert.ToString(q,2);
+            Console.WriteLine($"Number = {q} in binary = {number}");
+           
             //Use modulus operator to obtain the remainder  (n % 2) 
             //and divide variable by 2 in the loop
             Console.WriteLine("The remainder of dividing " + q + " by 2: " + q % 2);
-            Console.WriteLine("The remainder of dividing " + w + " by 2: " + w % 2);
-
-
+            
             //Use the ToCharArray() method to transform string to chararray
             //and Array.Reverse() method
-
+            Array firstArray = number.ToCharArray();
+            
+            foreach (var VARIABLE in firstArray)
+            {
+                Console.Write(VARIABLE);
+            }
+            Console.WriteLine("\n"+new string('-', 100));
+            Array.Reverse(firstArray);
+            Console.WriteLine($"f({q}) = {q} ({number})");           
         }
         #endregion
 
@@ -95,13 +97,21 @@ namespace Lab1_5
         static void My_strings()
         {
             //Declare int and string variables for decimal and binary presentations
-
+            int x, y;
+            string xStr, yStr;
             //Implement two positive integer variables input
-
+            Console.Write("Enter the first number: ");
+            x = Int32.Parse(Console.ReadLine());
+            Console.Write("Enter the second number: ");
+            y = Int32.Parse(Console.ReadLine());
             //To present each of them in the form of unary string use for loop
-
+            xStr = Convert.ToString(x,2);
+            yStr = Convert.ToString(y, 2);
             //Use concatenation of these two strings 
             //Note it is necessary to use some symbol ( for example “#”) to separate
+            char sep = '#';
+            string result;
+
 
             //Check the numbers on the equality 0
             //Realize the  algorithm for replacing '1#1' to '#' by using the for loop 
