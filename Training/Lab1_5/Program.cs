@@ -111,12 +111,20 @@ namespace Lab1_5
             //Use concatenation of these two strings 
             //Note it is necessary to use some symbol ( for example “#”) to separate
             char sep = '#';
-            string result;
-
+            string result = xStr + sep + yStr;
+            foreach (var VARIABLE in result)
+            {
+                Console.Write(VARIABLE);
+            }
 
             //Check the numbers on the equality 0
             //Realize the  algorithm for replacing '1#1' to '#' by using the for loop 
             //Delete the '#' from algorithm result
+            if ((x | y) != 0)
+            {
+
+            }
+            else Console.WriteLine("Y or X = 0");
 
             //Output the result 
         }
