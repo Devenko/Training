@@ -35,7 +35,7 @@ namespace Lab1_5
                                 break;
                             case 3:
                                 My_music();
-                                Console.WriteLine("");
+                                Console.WriteLine("music");
                                 break;
                             case 4:
                                 Morse_code();
@@ -66,12 +66,24 @@ namespace Lab1_5
         static void My_Binary()
         {
             //Implement positive integer variable input
+            int q, w;
+            Console.Write("Enter the first number: ");
+            q = Int32.Parse( Console.ReadLine());
+            Console.Write("Enter the second number: ");
+            w = Int32.Parse(Console.ReadLine());
 
             //Present it like binary string
             //   For example, 4 as 100
+            String first = Convert.ToString(q,2);
+            String second = Convert.ToString(w, 2);
+            Console.WriteLine($"First = {q} in binary = {first}");
+            Console.WriteLine($"Second = {w} in binary = {second}");
 
             //Use modulus operator to obtain the remainder  (n % 2) 
             //and divide variable by 2 in the loop
+            Console.WriteLine("The remainder of dividing " + q + " by 2: " + q % 2);
+            Console.WriteLine("The remainder of dividing " + w + " by 2: " + w % 2);
+
 
             //Use the ToCharArray() method to transform string to chararray
             //and Array.Reverse() method
