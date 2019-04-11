@@ -81,15 +81,16 @@ namespace Lab1_5
             
             //Use the ToCharArray() method to transform string to chararray
             //and Array.Reverse() method
-            Array firstArray = number.ToCharArray();
+            Array numberArray = number.ToCharArray();
             
-            foreach (var VARIABLE in firstArray)
+            
+            Console.WriteLine("\n"+new string('-', 100));
+            Array.Reverse(numberArray);
+            foreach (var VARIABLE in numberArray)
             {
                 Console.Write(VARIABLE);
             }
-            Console.WriteLine("\n"+new string('-', 100));
-            Array.Reverse(firstArray);
-            Console.WriteLine($"f({q}) = {q} ({number})");           
+            Console.WriteLine($"\nf({q}) = {q} ({number})");           
         }
         #endregion
 
