@@ -193,12 +193,18 @@ namespace Lab1_5
         static void Morse_code()
         {
             //Create string variable for 'sos'      
-
+            string sos = "sos";
             //Use string array for Morse code
             string[,] Dictionary_arr = new string[,] { { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" },
             { ".-   ", "-... ", "-.-. ", "-..  ", ".    ", "..-. ", "--.  ", ".... ", "..   ", ".--- ", "-.-  ", ".-.. ", "--   ", "-.   ", "---  ", ".--. ", "--.- ", ".-.  ", "...  ", "-    ", "..-  ", "...- ", ".--  ", "-..- ", "-.-- ", "--.. ", "-----", ".----", "..---", "...--", "....-", ".....", "-....", "--...", "---..", "----." }};
-            //Use ToCharArray() method for string to copy charecters to Unicode character array
+            
+            //Use ToCharArray() method for string to copy characters to Unicode character array
             //Use foreach loop for character array in which
+            string[,] dictUnic;
+            foreach (var w in Dictionary_arr)
+            {
+                w.ToCharArray() = new string[,];
+            }
 
             //Implement Console.Beep(1000, 250) for '.'
             // and Console.Beep(1000, 750) for '-'

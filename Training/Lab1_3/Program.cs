@@ -80,7 +80,8 @@ You can do whatever how many flights. How to transport the wolf, goat and cabbag
             // Implement option input (1,2,3,4,5)
             //     and input of  two or one numbers
             //  Perform calculations and output the result 
-            char aggain = 'y';
+
+            char aggain = default(char);
             do
             {
                 double a, b, total;

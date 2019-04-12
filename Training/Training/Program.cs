@@ -22,14 +22,14 @@ namespace Lab1_4
             public double memory;
             public double hdd;
 
-            //public Computer(double cpu, double frequency, double memory, double hdd)
-            //{
-            //   
-            //    this.cpu = cpu;
-            //    this.frequency = frequency;
-            //    this.memory = memory;
-            //    this.hdd = hdd;
-            //}
+            public Computer(double cpu, double frequency, double memory, double hdd)
+            {
+
+                this.cpu = cpu;
+                this.frequency = frequency;
+                this.memory = memory;
+                this.hdd = hdd;
+            }
             public void Info()
             {
 
@@ -83,6 +83,8 @@ namespace Lab1_4
             // 7) count total number of all computers
             // Note: use loops and if-else statements
             // Note: use the same loop for 6) and 7)
+            var comArray = new Computer[4,3];
+            
 
 
             int totalDesktop = 0, totalLaptop = 0, totalServer = 0, total = 0;
@@ -92,6 +94,11 @@ namespace Lab1_4
                 totalLaptop += depart[i, 1];
                 totalServer += depart[i, 2];
 
+                comArray[i, 0] = new Computer(4,2.5,6,500);
+                comArray[i, 1] = new Computer(2,1.7,4,250);
+                comArray[i, 2] = new Computer(8,3,16,2000);
+
+
                 for (int j = 0; j < 3; j++)
                 {
                     total += depart[i, j];
@@ -100,6 +107,12 @@ namespace Lab1_4
                     //   totalDesktop += depart[i, 0];
                 }
             }
+
+            foreach (var VARIABLE in comArray)
+            {
+                Console.Write(VARIABLE.ToString());
+            }
+
             Console.WriteLine("Desktop: " + totalDesktop);
             Console.WriteLine("Laptop:  " + totalLaptop);
             Console.WriteLine("Server:  " + totalServer);
