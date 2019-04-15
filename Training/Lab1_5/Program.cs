@@ -116,6 +116,30 @@ namespace Lab1_5
             {
                 Console.Write(VARIABLE);
             }
+            Console.WriteLine(new string('-', 30));
+
+            //int ind = result.Length;
+            //char[] chTrim = {'1', '0'};
+            for (int i = 0; i < result.Length; i++)
+            {
+                if (result.StartsWith("#") | (result.EndsWith("#")))
+                {
+                    result = result.Substring(0, result.Length-1);
+                    result = result.Remove(0,1);
+                    
+                    //result = result.Substring(ind, 1);
+                    //result = result.Substring(0, ind);
+                    foreach (var VARIABLE in result)
+                    {
+                        Console.Write(VARIABLE);
+                    }
+                }
+            }Console.WriteLine(new string('-', 30));
+
+            foreach (var VARIABLE in result)
+            {
+                Console.Write(VARIABLE);
+            }
 
             //Check the numbers on the equality 0
             //Realize the  algorithm for replacing '1#1' to '#' by using the for loop 
