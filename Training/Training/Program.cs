@@ -10,12 +10,12 @@ namespace Lab1_4
     {
         // 1) declare enum ComputerType
 
-
+        enum ComputerType { Desktop = 1, Laptop, Server }
         // 2) declare struct Computer
         struct Computer
         {
 
-            enum ComputerType { Desktop = 1, Laptop, Server }
+
 
             public double cpu;
             public double frequency;
@@ -39,6 +39,8 @@ namespace Lab1_4
 
         static void Main(string[] args)
         {
+            Computer tmpComputer;
+
             // 3) declare jagged array of computers size 4 (4 departments)
             int[,] depart = new int[,] {{2,2,1},
                                         {0,3,0},
@@ -83,9 +85,11 @@ namespace Lab1_4
             // 7) count total number of all computers
             // Note: use loops and if-else statements
             // Note: use the same loop for 6) and 7)
-            var comArray = new Computer[4,3];
-            
+            var comArray = new Computer[3];
 
+            comArray[0] = c1;
+            comArray[1] = c2;
+            comArray[2] = c3;
 
             int totalDesktop = 0, totalLaptop = 0, totalServer = 0, total = 0;
             for (int i = 0; i < 4; i++)
@@ -94,11 +98,9 @@ namespace Lab1_4
                 totalLaptop += depart[i, 1];
                 totalServer += depart[i, 2];
 
-                comArray[i, 0] = new Computer(4,2.5,6,500);
-                comArray[i, 1] = new Computer(2,1.7,4,250);
-                comArray[i, 2] = new Computer(8,3,16,2000);
 
 
+                /*
                 for (int j = 0; j < 3; j++)
                 {
                     total += depart[i, j];
@@ -106,11 +108,21 @@ namespace Lab1_4
                    // if (depart[i, j] == depart[i, 0])
                     //   totalDesktop += depart[i, 0];
                 }
+                */
             }
 
-            foreach (var VARIABLE in comArray)
+            total = totalDesktop + totalLaptop + totalServer;
+
+            
+
+
+
+            foreach (Computer VARIABLE in comArray)
             {
-                Console.Write(VARIABLE.ToString());
+                //if (VARIABLE.hdd > 1000)
+                //{
+                VARIABLE.Info();
+                //}
             }
 
             Console.WriteLine("Desktop: " + totalDesktop);
@@ -130,7 +142,20 @@ namespace Lab1_4
             // find position of this computer in array (indexes)
             // Note: use loops and if-else statements
             // Note: use logical oerators in statement conditions
-
+            for (int i = 0; i < comArray.Length; i++)
+            {
+                if ((tmpComputer.cpu & tmpComputer.memory) < (c1.hdd | c2.hdd | c3.hdd))
+                {
+                    comArray[i] = tmpComputer;
+                    //tmpComputer.hdd = 16;
+                    //tmpComputer = comArray[i];
+                    tmpComputer.Info();
+                    //tmpComputer = comArray[i, 1];
+                    //tmpComputer.Info();
+                    //tmpComputer = comArray[i, 2];
+                    //tmpComputer.Info();
+                }
+            }
 
             // 10) make desktop upgrade: change memory up to 8
             // change value of memory to 8 for every desktop. Don't do it for other computers

@@ -203,7 +203,7 @@ namespace Lab1_5
             string[,] dictUnic;
             foreach (var w in Dictionary_arr)
             {
-                w.ToCharArray() = new string[,];
+                //w.ToCharArray() = new string[,];
             }
 
             //Implement Console.Beep(1000, 250) for '.'
