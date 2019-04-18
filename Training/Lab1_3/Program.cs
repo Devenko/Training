@@ -88,12 +88,20 @@ You can do whatever how many flights. How to transport the wolf, goat and cabbag
                 int oper;
 
                 Console.WriteLine("Select the arithmetic operation: ");
-                oper = int.Parse(Console.ReadLine());
+                while (!int.TryParse(Console.ReadLine(), out oper))
+                {
+                    Console.WriteLine("Input Error! Enter an integer");
+                }
                 Console.WriteLine("Introduce first number: ");
-                a = double.Parse(Console.ReadLine());
+                while (!double.TryParse(Console.ReadLine(), out a))
+                {
+                    Console.WriteLine("Input Error! Enter a floating point number");
+                }
                 Console.WriteLine("Introduce second number: ");
-                b = double.Parse(Console.ReadLine());
-
+                while (!double.TryParse(Console.ReadLine(), out b))
+                {
+                    Console.WriteLine("Input Error! Enter a floating point number");
+                }
                 if (oper == 1)
                 {
                     total = a * b;
@@ -124,8 +132,13 @@ You can do whatever how many flights. How to transport the wolf, goat and cabbag
                     Console.WriteLine("Unknown operator");
                 }
 
-                Console.WriteLine("Want to continue working with the calculator? Yes - y");
-                aggain = char.Parse(Console.ReadLine());
+                Console.WriteLine("Want to continue working with the calculator? Yes - y No - n");
+                while (!char.TryParse(Console.ReadLine(), out aggain))
+                {
+                    Console.WriteLine("Want to continue working with the calculator? Yes - y No - n");
+                }
+                if (aggain == 'n')
+                   break;
             } while (aggain == 'y');
         }
 
@@ -136,12 +149,20 @@ You can do whatever how many flights. How to transport the wolf, goat and cabbag
         {
             int factorial = 1;
             int x;
-            Console.WriteLine("Введите число: ");
-            x = int.Parse(Console.ReadLine());
-            for (int i = x; i > 0; factorial *= i--)
-            { }
+            Console.WriteLine("Enter an integer - X");
+            while (!int.TryParse(Console.ReadLine(), out x))
+            {
+                Console.WriteLine("Input Error!  - X");
+            }
 
-            Console.WriteLine($"Факториал {x} = {factorial}");
+            //Console.WriteLine("Enter an integer: ");
+            //x = int.Parse(Console.ReadLine());
+            for (int i = x; i > 0; i--)
+            {
+                factorial *= i;
+            }
+
+            Console.WriteLine($"Factorial {x} = {factorial}");
 
             // Implement input of the number
             // Implement input the for circle to calculate factorial of the number

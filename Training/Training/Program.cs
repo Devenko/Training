@@ -32,7 +32,6 @@ namespace Lab1_4
             }
             public void Info()
             {
-
                 Console.WriteLine($"CPU {cpu} core, {frequency} HGz; memory {memory} Gb;HDD {hdd}Gb.");
             }
         }
@@ -90,15 +89,20 @@ namespace Lab1_4
             comArray[0] = c1;
             comArray[1] = c2;
             comArray[2] = c3;
-
+            foreach (Computer VARIABLE in comArray)
+            {
+                //if (VARIABLE.hdd > 1000)
+                //{
+                VARIABLE.Info();
+                //}
+            }
+            Console.WriteLine(new string('*', 30));
             int totalDesktop = 0, totalLaptop = 0, totalServer = 0, total = 0;
             for (int i = 0; i < 4; i++)
             {
                 totalDesktop += depart[i, 0];
                 totalLaptop += depart[i, 1];
                 totalServer += depart[i, 2];
-
-
 
                 /*
                 for (int j = 0; j < 3; j++)
@@ -112,18 +116,6 @@ namespace Lab1_4
             }
 
             total = totalDesktop + totalLaptop + totalServer;
-
-            
-
-
-
-            foreach (Computer VARIABLE in comArray)
-            {
-                //if (VARIABLE.hdd > 1000)
-                //{
-                VARIABLE.Info();
-                //}
-            }
 
             Console.WriteLine("Desktop: " + totalDesktop);
             Console.WriteLine("Laptop:  " + totalLaptop);
@@ -144,8 +136,9 @@ namespace Lab1_4
             // Note: use logical oerators in statement conditions
             for (int i = 0; i < comArray.Length; i++)
             {
-                if ((tmpComputer.cpu & tmpComputer.memory) < (c1.hdd | c2.hdd | c3.hdd))
+                if (comArray. < (c1.cpu | c2.cpu | c3.cpu))
                 {
+                    tmpComputer = comArray[i];
                     comArray[i] = tmpComputer;
                     //tmpComputer.hdd = 16;
                     //tmpComputer = comArray[i];

@@ -120,6 +120,11 @@ namespace Lab1_5
 
             //int ind = result.Length;
             //char[] chTrim = {'1', '0'};
+
+            /*Не получается обрезать строку            
+             */
+
+
             for (int i = 0; i < result.Length; i++)
             {
                 if (result.StartsWith("#") | (result.EndsWith("#")))
