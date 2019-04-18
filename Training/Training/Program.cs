@@ -122,38 +122,43 @@ namespace Lab1_4
             Console.WriteLine("Server:  " + totalServer);
             Console.WriteLine("Total: " + total);
 
-            Console.ReadLine();
+
             // 8) find computer with the largest storage (HDD) - 
             // compare HHD of every computer between each other; 
             // find position of this computer in array (indexes)
             // Note: use loops and if-else statements
+            Console.WriteLine(new string('~', 30));
+            var maxHDD = new Computer();
+            for (int i = 0; i < comArray.Length; i++)
+            {
+                if (comArray[i].hdd > maxHDD.hdd)
+                {
+                    maxHDD.hdd = comArray[i].hdd;
+                    maxHDD.Info();
+                }
 
+            }
 
+            //foreach (Computer VARIABLE in comArray)
+            //{
+            //    if ((VARIABLE.hdd >= c1.hdd) | (VARIABLE.hdd >= c2.hdd) | (VARIABLE.hdd >= c3.hdd))
+            //    {
+                   
+            //        VARIABLE.Info();
+            //    }
+            //}
+            Console.WriteLine(new string('~', 30));
             // 9) find computer with the lowest productivity (CPU and memory) - 
             // compare CPU and memory of every computer between each other; 
             // find position of this computer in array (indexes)
             // Note: use loops and if-else statements
             // Note: use logical oerators in statement conditions
-            for (int i = 0; i < comArray.Length; i++)
-            {
-                if (comArray. < (c1.cpu | c2.cpu | c3.cpu))
-                {
-                    tmpComputer = comArray[i];
-                    comArray[i] = tmpComputer;
-                    //tmpComputer.hdd = 16;
-                    //tmpComputer = comArray[i];
-                    tmpComputer.Info();
-                    //tmpComputer = comArray[i, 1];
-                    //tmpComputer.Info();
-                    //tmpComputer = comArray[i, 2];
-                    //tmpComputer.Info();
-                }
-            }
+
 
             // 10) make desktop upgrade: change memory up to 8
             // change value of memory to 8 for every desktop. Don't do it for other computers
             // Note: use loops and if-else statements
-
+            Console.ReadLine();
         }
 
     }
