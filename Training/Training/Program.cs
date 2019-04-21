@@ -34,6 +34,7 @@ namespace Lab1_4
             {
                 Console.WriteLine($"CPU {cpu} core, {frequency} HGz; memory {memory} Gb;HDD {hdd}Gb.");
             }
+
         }
 
         static void Main(string[] args)
@@ -103,18 +104,7 @@ namespace Lab1_4
                 totalDesktop += depart[i, 0];
                 totalLaptop += depart[i, 1];
                 totalServer += depart[i, 2];
-
-                /*
-                for (int j = 0; j < 3; j++)
-                {
-                    total += depart[i, j];
-
-                   // if (depart[i, j] == depart[i, 0])
-                    //   totalDesktop += depart[i, 0];
-                }
-                */
             }
-
             total = totalDesktop + totalLaptop + totalServer;
 
             Console.WriteLine("Desktop: " + totalDesktop);
@@ -129,35 +119,56 @@ namespace Lab1_4
             // Note: use loops and if-else statements
             Console.WriteLine(new string('~', 30));
             var maxHDD = new Computer();
+            int indexMaxHDD = 0;
             for (int i = 0; i < comArray.Length; i++)
             {
                 if (comArray[i].hdd > maxHDD.hdd)
                 {
-                    maxHDD.hdd = comArray[i].hdd;
-                    maxHDD.Info();
+                    maxHDD = comArray[i];
+                    indexMaxHDD = Array.IndexOf(comArray, comArray[i]);
                 }
-
             }
+            Console.Write($"Index with the Max HDD: {indexMaxHDD}\n");
+            maxHDD.Info();
 
-            //foreach (Computer VARIABLE in comArray)
-            //{
-            //    if ((VARIABLE.hdd >= c1.hdd) | (VARIABLE.hdd >= c2.hdd) | (VARIABLE.hdd >= c3.hdd))
-            //    {
-                   
-            //        VARIABLE.Info();
-            //    }
-            //}
             Console.WriteLine(new string('~', 30));
             // 9) find computer with the lowest productivity (CPU and memory) - 
             // compare CPU and memory of every computer between each other; 
             // find position of this computer in array (indexes)
             // Note: use loops and if-else statements
             // Note: use logical oerators in statement conditions
-
+            var lowestCom = comArray[0];
+            int indexLowestCom = 0;
+            for (int i = 0; i < comArray.Length; i++)
+            {
+                if ((comArray[i].cpu < lowestCom.cpu) && (comArray[i].memory < lowestCom.memory))
+                {
+                    lowestCom = comArray[i];
+                    indexLowestCom = Array.IndexOf(comArray, comArray[i]);
+                }
+            }
+            Console.Write($"Index with the lowest productivity (CPU and memory): {indexLowestCom}\n");
+            lowestCom.Info();
 
             // 10) make desktop upgrade: change memory up to 8
             // change value of memory to 8 for every desktop. Don't do it for other computers
             // Note: use loops and if-else statements
+            for (int i = 0; i < comArray.Length; i++)
+            {
+                if (comArray[i].memory == 6)
+                {
+                    comArray[i].memory = 8; 
+                }
+            }
+            Console.WriteLine(new string('%', 30));
+            foreach (Computer VARIABLE in comArray)
+            {
+                //if (VARIABLE.hdd > 1000)
+                //{
+                VARIABLE.Info();
+                //}
+            }
+            Console.WriteLine(new string('%', 30));
             Console.ReadLine();
         }
 
