@@ -245,28 +245,61 @@ namespace Lab1_5
         #region Morse
         static void Morse_code()
         {
-            //Create string variable for 'sos'      
-            string sos = "sos";
+
+            //Create string variable for 'sos'     
+            Console.WriteLine("Enter yor few symbol ");
+            string input = Console.ReadLine();
+
             //Use string array for Morse code
             string[,] Dictionary_arr = new string[,] { { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" },
             { ".-   ", "-... ", "-.-. ", "-..  ", ".    ", "..-. ", "--.  ", ".... ", "..   ", ".--- ", "-.-  ", ".-.. ", "--   ", "-.   ", "---  ", ".--. ", "--.- ", ".-.  ", "...  ", "-    ", "..-  ", "...- ", ".--  ", "-..- ", "-.-- ", "--.. ", "-----", ".----", "..---", "...--", "....-", ".....", "-....", "--...", "---..", "----." }};
+            //Use ToCharArray() method for string to copy charecters to Unicode character array
 
-            Console.WriteLine("\n" + new string('*', 30));
-            //Use ToCharArray() method for string to copy characters to Unicode character array
+            char[] array = input.ToCharArray();
+
             //Use foreach loop for character array in which
-            string[,] dictUnic;
-            foreach (var w in Dictionary_arr)
+            foreach (char value in array)
             {
+                for (int j = 0; j < Dictionary_arr.GetLength(1); j++)
+                {
 
-                //w.ToCharArray() = new string[,];
+                    if (Dictionary_arr[0, j] == value.ToString())
+                    {
+                        Console.WriteLine(Dictionary_arr[0, j] + "  -->  " + Dictionary_arr[1, j]);
+                        // char[] array2 = Dictionary_arr[1, j].ToCharArray();
+
+                        foreach (char value2 in Dictionary_arr[1, j].ToCharArray())
+                        {
+                            Console.WriteLine(value2);
+
+                            if (value2 == '.')
+                            {
+                                Console.Beep(1000, 250); //for '.'    
+                                //Thread.Sleep(50);
+                            }
+                            else if (value2 == '-')
+                            {
+                                Console.Beep(1000, 750); // for '-'  
+                            }
+                            else
+                            {
+                                Thread.Sleep(50);
+                            }
+                        }
+
+                        break;
+                    }
+
+                    //Use Thread.Sleep(50) to separate sounds
+                }
             }
 
             //Implement Console.Beep(1000, 250) for '.'
             // and Console.Beep(1000, 750) for '-'
+            // Thread.Sleep(2000);
 
-            //Use Thread.Sleep(50) to separate sounds
-            //                  
         }
+
 
         #endregion
     }
