@@ -62,7 +62,90 @@ You can do whatever how many flights. How to transport the wolf, goat and cabbag
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Please,  type numbers by step ");
             // Implement input and checking of the 7 numbers in the nested if-else blocks with the  Console.ForegroundColor changing
+            int n1, n2, n3, n4, n5, n6, n7 = 0;
+            int m1 = 3, m2 = 8, k3 = 1, l3 = 2, m4 = 7, k5 = 2, l5 = 1, m6 = 8, m7 = 3;
+            bool flag;
 
+            n1 = int.Parse(Console.ReadLine());
+            if (n1 == m1)
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("Please, type next number");
+                n2 = int.Parse(Console.ReadLine());
+
+                if (n2 == m2)
+                {
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.WriteLine("Please, type next number");
+                    n3 = int.Parse(Console.ReadLine());
+
+                    flag = (n3 == k3) | (n3 == l3);
+                    if (flag)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine("Please, type next number");
+                        n4 = int.Parse(Console.ReadLine());
+
+                        if (n4 == m4)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Blue;
+                            Console.WriteLine("Please, type next number");
+                            n5 = int.Parse(Console.ReadLine());
+                            flag = ((n5 == k5) & (n3 == k3)) | ((n5 == l5) & (n3 == l3));
+
+                            if (flag)
+                            {
+                                Console.ForegroundColor = ConsoleColor.Yellow;
+                                Console.WriteLine("Please, type next number");
+                                n6 = int.Parse(Console.ReadLine());
+
+                                if (n6 == m6)
+                                {
+                                    Console.ForegroundColor = ConsoleColor.Blue;
+                                    Console.WriteLine("Please, type next number");
+                                    n7 = int.Parse(Console.ReadLine());
+
+                                    if (n7 == m7)
+                                    {
+                                        Console.ForegroundColor = ConsoleColor.Green;
+                                        Console.WriteLine("Success :)");
+                                    }
+                                    else
+                                    {
+                                        Console.ForegroundColor = ConsoleColor.Red;
+                                        Console.WriteLine("Failure :(");
+                                    }
+                                }
+                                else
+                                {
+                                    Console.ForegroundColor = ConsoleColor.Red;
+                                    Console.WriteLine("Failure :(");
+                                }
+                            }
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("Failure :(");
+                        }
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Failure :(");
+                    }
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Failure :(");
+                }
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Failure :(");
+            }
         }
         #endregion
 

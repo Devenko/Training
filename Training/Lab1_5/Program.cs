@@ -7,6 +7,7 @@ namespace Lab1_5
     {
         static void Main(string[] args)
         {
+
             int a;
             try
             {
