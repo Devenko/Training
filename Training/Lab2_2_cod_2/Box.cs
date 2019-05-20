@@ -95,7 +95,7 @@ namespace Lab2_2_cod_2
         //Change the message in the method to return the Box square
         //Use Console.SetCursorPosition() method
         //Trim the message if necessary
-        private void Draw()
+        private void Draw(int height, int width, int x, int y, string symbol)
         {
             for (int j = 0; j < height; j++)
             {

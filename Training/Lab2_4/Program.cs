@@ -67,19 +67,19 @@ namespace Hello_Class_stud
         {
             Console.WriteLine("Beep sos");
             string word = "sos";
-            Morse_matrix code_tbl = new Morse_matrix();
-            code_tbl.Write_matrix();
+            MorseMatrix code_tbl = new MorseMatrix();
+            code_tbl.WriteMatrix();
             string rslt = code_tbl.crypt(word);
             Console.WriteLine("sos : " + rslt);
-            code_tbl.Res_beep(rslt);
+            code_tbl.ResBeep(rslt);
 
         }
 
         static void Str_matr_decrypt()
         {
             string word;
-            Morse_matrix code_tbl = new Morse_matrix();
-            code_tbl.Write_matrix();
+            MorseMatrix code_tbl = new MorseMatrix();
+            code_tbl.WriteMatrix();
             Console.WriteLine("From beep to sos");
             string[] sos = { "...  ", "---  ", "...  " };
             word = code_tbl.decrypt(sos);
@@ -92,11 +92,11 @@ namespace Hello_Class_stud
             string word = "sos";
             Console.WriteLine("Please, write key from 1 to 35 :");
             int b = int.Parse(Console.ReadLine());
-            Morse_matrix code_tbl = new Morse_matrix(Alphabet.Dictionary_arr, b);
-            code_tbl.Write_matrix();
+            MorseMatrix code_tbl = new MorseMatrix(Alphabet.Dictionary_arr, b);
+            code_tbl.WriteMatrix();
             string rslt = code_tbl.crypt(word);
             Console.WriteLine("sos : " + rslt);
-            code_tbl.Res_beep(rslt);
+            code_tbl.ResBeep(rslt);
 
             Console.WriteLine("From beep to sos");
             string[] sos = { rslt.Substring(0, 5), rslt.Substring(5, 5), rslt.Substring(10, 5) };
@@ -110,14 +110,14 @@ namespace Hello_Class_stud
 
             Console.WriteLine("Please, write key from 1 to 35 :");
             int b = int.Parse(Console.ReadLine());
-            Morse_matrix code_tbl1 = new Morse_matrix(b);
+            MorseMatrix code_tbl1 = new MorseMatrix(b);
             Console.WriteLine("Please, write key from 1 to 35 :");
             int d = int.Parse(Console.ReadLine());
-            Morse_matrix code_tbl2 = new Morse_matrix(Alphabet.Dictionary_arr, d);
+            MorseMatrix code_tbl2 = new MorseMatrix(Alphabet.Dictionary_arr, d);
             Console.WriteLine("Code 1 ");
-            code_tbl1.Write_matrix();
+            code_tbl1.WriteMatrix();
             Console.WriteLine("Code 2 ");
-            code_tbl2.Write_matrix();
+            code_tbl2.WriteMatrix();
 
             if (code_tbl1.Equals(code_tbl2))
                 Console.WriteLine("True");
